@@ -15,6 +15,8 @@ def plot_visualization_1(ela_path, arrest_path):
     # Merge the two datasets on 'borough' and 'year'
     merged_df = pd.merge(ela_df, arrest_df, on=[borough, year])
 
+    merged_df.to_csv("final_output.csv", index=False)
+
     # Plotting the scatter plot with seaborn for hue and size support
     plt.figure(figsize=(12, 8))
     sns.scatterplot(

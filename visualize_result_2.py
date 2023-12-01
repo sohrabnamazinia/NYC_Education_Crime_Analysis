@@ -10,6 +10,8 @@ def plot_visualization_2(ela_path, arrest_path):
     # Merge the two datasets based on 'borough' and 'Year'
     merged_df = pd.merge(ela_df, arrest_df, on=['borough', 'Year'])
 
+    merged_df.to_csv("final_output.csv", index=False)
+
     # Get unique years for separate mini scatter plots
     unique_years = merged_df['Year'].unique()
 
